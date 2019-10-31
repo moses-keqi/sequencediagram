@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="76.492px" height="76.492px" viewBox="0 0 76.492 76.492" enable-background="new 0 0 76.492 76.492" xml:space="preserve">
+<g id="participants">
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="25.312" y="15.292" width="37.157" height="47.907">
+			
+				<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="25.312" y="15.292" width="37.157" height="47.907" id="SVGID_1_">
+		<g filter="url(#Adobe_OpacityMaskFilter)">
+			<rect x="15.117" y="9.605" width="51.667" height="60.833"/>
+			<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" d="M39.178,38.681
+				c0,0-0.52,4.278,1.918,6.715s7.167,3.459,8.917,7.209s0.952,8.844,0.952,8.844H17.666c0,0-0.798-5.094,0.952-8.844
+				s6.479-4.771,8.917-7.209s1.918-6.715,1.918-6.715l-0.002-0.001c-3.842-1.822-6.5-5.738-6.5-10.273
+				c0-6.276,5.088-11.364,11.364-11.364S45.68,22.13,45.68,28.407C45.68,32.944,43.021,36.86,39.178,38.681L39.178,38.681z"/>
+			<rect x="17.284" y="59.605" fill="#FFFFFF" width="33.862" height="19.332"/>
+		</g>
+	</mask>
+	<g mask="url(#SVGID_1_)">
+		<g>
+			<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M50.877,37.372
+				c-0.654,0.511-1.365,0.951-2.123,1.311v-0.001c0,0-0.133,1.095,0.051,2.493"/>
+			
+				<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0739,4.8886" d="
+				M50.808,45.529c2.474,2.344,7.062,3.395,8.78,7.076c0.576,1.232,0.876,2.611,1.02,3.906"/>
+			<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M60.72,58.959
+				c-0.02,1.467-0.18,2.49-0.18,2.49h-2.5"/>
+			
+				<line fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.0532,6.0638" x1="51.977" y1="61.449" x2="32.774" y2="61.449"/>
+			<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M29.742,61.449h-2.5
+				c0,0-0.16-1.023-0.18-2.49"/>
+			
+				<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0739,4.8886" d="
+				M27.634,54.119c0.149-0.518,0.333-1.027,0.56-1.514c1.75-3.75,6.479-4.771,8.917-7.209c0.552-0.552,0.953-1.199,1.242-1.869"/>
+			<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M38.977,41.174
+				c0.184-1.397,0.051-2.493,0.051-2.493l-0.002-0.001c-0.757-0.359-1.468-0.799-2.122-1.31"/>
+			
+				<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.6174,5.5408" d="
+				M33.517,33.053c-0.636-1.418-0.991-2.991-0.991-4.646c0-6.276,5.088-11.364,11.364-11.364c6.277,0,11.365,5.088,11.365,11.364
+				c0,2.644-0.902,5.077-2.417,7.008"/>
+		</g>
+	</g>
+	<path fill="none" stroke="#7AC5E2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M39.178,38.681c0,0-0.52,4.278,1.918,6.715s7.167,3.459,8.917,7.209s0.952,8.844,0.952,8.844H17.666c0,0-0.798-5.094,0.952-8.844
+		s6.479-4.771,8.917-7.209s1.918-6.715,1.918-6.715l-0.002-0.001c-3.842-1.822-6.5-5.738-6.5-10.273
+		c0-6.276,5.088-11.364,11.364-11.364S45.68,22.13,45.68,28.407C45.68,32.944,43.021,36.86,39.178,38.681L39.178,38.681z"/>
+</g>
+</svg>

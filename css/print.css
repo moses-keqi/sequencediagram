@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('libs/fontawesome-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MaterialDesignIcons';
+    src: url('libs/materialdesignicons-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@page {
+    margin: 0.5cm;
+}
+
+body * {
+    visibility: hidden;
+}
+
+#diagramCanvas {
+    visibility: visible;
+    max-width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<HEAD>
+    <meta charset="UTF-8">
+    <title>SequenceDiagram.org - UML Sequence Diagram Online Tool</title>
+    <meta name="description"
+          content="Free sequence diagram online tool. Create sequence diagrams using textual notation or draw quickly via Drag and Drop with an easy to use interface.">
+    <meta name="keywords"
+          content="时序图,在线时序图">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://sequencediagram.org/icon128x128.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="UML序列图在线工具"/>
+    <meta property="og:description"
+          content="Free sequence diagram online tool. Create sequence diagrams using textual notation or draw quickly via Drag and Drop with an easy to use interface."/>
+
+    <script src="libs/lz-string.min.js"></script>
+    <script src="libs/canvas2svg.min.js"></script>
+    <link rel="stylesheet" href="css/codemirror.css">
+    <script src="libs/codemirror.min.js"></script>
+    <link rel="stylesheet" href="css/show-hint.css">
+    <script src="libs/show-hint.js"></script>
+    <script src="libs/active-line.js"></script>
+    <link rel="stylesheet" href="css/dialog.css">
+    <script src="libs/dialog.js"></script>
+    <script src="libs/searchcursor.js"></script>
+    <script src="libs/search.js"></script>
+    <script src="libs/annotatescrollbar.js"></script>
+    <link rel="stylesheet" href="css/matchesonscrollbar.css">
+    <script src="libs/matchesonscrollbar.js"></script>
+    <script src="libs/jump-to-line.js"></script>
+    <script src="libs/rbush.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=8.3.0">
+    <link rel="stylesheet" href="css/print.css?v=8.3.0" type="text/css" media="print">
+    <script src="libs/all.min.js?v=8.3.0.1"></script>
+
+    <script src="libs/msal.min.js"></script>
+    <script src="libs/initOneDrive.js"></script>
+    <script src="libs/OneDrive.js" defer async></script>
+    <!--<script src="https://apis.google.com/js/platform.js?onload=onGooglePlatform" defer async></script>-->
+</head>
+
+<body>
+<div id="top">
+    <img id="logo" alt="SequenceDiagram.org" src="assets/logo24x24.png">
+    <div id="activeFile">
+        <span id="activeFileStatus"><label for="activeFileNameChange"></label><input id="activeFileNameChange"><span
+                id="activeFileNameStatus">Untitled</span> [<span
+                id="activeFileStorageStatus">Not saved</span>]</span>
+    </div>
+    <!--lic-->
+</div>
+<div id="topRight">
+    <div>
+        <!-- donations-start -->
+        <div class="dropdown">
+            <div id="menuButtonDonations" class="menuButton">Donations</div>
+            <div id="menuDonations" class="menuContent">
+                <!--
+				<div class="menuRow">
+                    <table class="menuTable">
+                        <tr>
+                            <td>Liberapay&nbsp;&nbsp;</td>
+                            <td class="right">
+                                <a href="https://liberapay.com/sequencediagramorg/donate" target="_blank">
+                                    <img alt="Donate using Liberapay" src="assets/donate.svg">
+                                </a>
+                            </td>
+                        </tr>
+                    <table class="menuTable">
+                        <tr>
+                            <td>Patreon&nbsp;&nbsp;</td>
+                            <td class="right">
+                                <a class="sc-VigVT gTXqXb" href="https://www.patreon.com/bePatron?u=15407613" target="_blank" rel="noopener">
+                                    <div class="sc-bZQynM fKGKmg">
+                                        <div class="sc-bZQynM fSJOpK">
+                                            <div class="eren1a-0 fysOvk">
+                                        <span class="s126e0qj-0 jlyAAk">
+                                            <svg viewBox="0 0 569 546" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><circle data-color="1" id="Oval"
+                                                                                                                                   cx="362.589996"
+                                                                                                                                   cy="204.589996"
+                                                                                                                                   r="204.589996"></circle><rect
+                                                    data-color="2" id="Rectangle" x="0" y="0" width="100" height="545.799988"></rect></g></svg>
+                                        </span>
+                                            </div>
+                                            <div class="mr4juj-0 jQSwUz"></div>
+                                            <div class="button-text">Become a patron</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Paypal&nbsp;&nbsp;</td>
+                            <td class="right">
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypalForm" rel="noopener">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="hosted_button_id" value="VWPSBDS67UJCL">
+                                    <input type="image" src="paypal/btn_donateCC_LG.png" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>-->
+            </div>
+        </div>
+        <!-- donations-end -->
+
+        <div class="dropdown">
+            <div id="menuButtonSettings" class="menuButton">Settings</div>
+            <div id="menuSettings" class="menuContent">
+                <div class="menuRow">
+                    <fieldset>
+                        <legend>New File Default (Ctrl+S) Storage</legend>
+                        <div id="menuSettingsDefaultStorageGoogleDrive" class="menuRow menuRowHighlight">
+                            <span id="defaultStorageRadioGoogleDrive"></span>&nbsp;Google Drive
+                        </div>
+                        <div id="menuSettingsDefaultStorageGoogleDriveRootFolder" class="menuRow menuRowHighlight">
+                            <span id="defaultStorageRadioGoogleDriveRootFolder"></span>&nbsp;Google Drive Root Folder
+                        </div>
+                        <div id="menuSettingsDefaultStorageOneDrive" class="menuRow menuRowHighlight">
+                            <span id="defaultStorageRadioOneDrive"></span>&nbsp;OneDrive
+                        </div>
+                        <div id="menuSettingsDefaultStorageWebStorage" class="menuRow menuRowHighlight">
+                            <span id="defaultStorageRadioWebStorage"></span>&nbsp;Web Storage (localStorage)
+                        </div>
+                        <div id="menuSettingsDefaultStorageLocalDisk" class="menuRow menuRowHighlight">
+                            <span id="defaultStorageRadioLocalDisk"></span>&nbsp;Local Disk
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="menuSettingsAlertForUnsavedChanges" class="menuRow menuRowHighlight">
+                    <span id="alertForUnsavedChangesCheckbox"></span>&nbsp;Alert for unsaved changes
+                </div>
+                <div id="menuSettingsAutosave" class="menuRow menuRowHighlight">
+                    <span id="autosaveCheckbox"></span>&nbsp;Autosave every 10 min if there are changes
+                </div>
+                <div id="menuSettingsSynchronizeFilenameWithTitle" class="menuRow menuRowHighlight">
+                    <span id="synchronizeFilenameWithTitleCheckbox"></span>&nbsp;Synchronize filename with title (legacy behavior)
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div id="menuButtonView" class="menuButton">View</div>
+            <div id="menuView" class="menuContent">
+                <div id="menuViewPresentationMode" class="menuRow menuRowHighlight">
+                    <span id="presentationModeCheckbox"></span>&nbsp;Presentation Mode (Ctrl+M)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div id="menuViewParticipantOverlay" class="menuRow menuRowHighlight">
+                    <span id="participantOverlayCheckbox"></span>&nbsp;Participant Overlay
+                </div>
+                <div id="menuViewReadOnlyPresentationMode" class="menuRow menuRowHighlight" title="check this to make the diagram read only in Presentation Mode">
+                    <span id="readOnlyPresentationModeCheckbox"></span>&nbsp;Read Only Presentation Mode
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification"></div>
+</div>
+
+<div id="actions">
+    <img id="newDiagram" class="actionButton" src="assets/new.svg" title="new diagram">
+    <img id="openButton" class="actionButton" src="assets/open.svg" title="open source text">
+    <img id="saveButton" class="actionButton" src="assets/save.svg" title="save source text">
+    <img id="instructions" class="actionButton" src="assets/instructions.svg" title="instructions">
+    <img id="addParticipant" class="actionButton" src="assets/participant01.svg" title="add participant">
+    <img id="zoomIn" class="actionButton" src="assets/zoomin.svg" title="zoom in">
+    <img id="zoomOut" class="actionButton" src="assets/zoomout.svg" title="zoom out">
+    <img id="export" class="actionButton" src="assets/export01.svg"
+         title="export diagram for right-click-copy using current zoom level (note: use the magnifying glass for larger image)">
+    <img id="createUrl" class="actionButton" src="assets/url.svg" title="create URL to share">
+    <a href="#" id="svg">
+        <img class="actionButton" src="assets/svg.svg" title="save SVG image (vector format)">
+    </a>
+    <a href="#" id="pnghq">
+        <img class="actionButton" src="assets/pnghq.svg" title="save PNG HQ image using current zoom level (note: use the magnifying glass for larger image)">
+    </a>
+    <a href="#" id="jpglq">
+        <img class="actionButton" src="assets/jpglq.svg" title="save JPEG LQ image using current zoom level (note: use the magnifying glass for larger image)">
+    </a>
+    <img id="info" class="actionButton" src="assets/info.svg" title="info">
+</div>
+
+<div id="source"></div>
+<div id="handleWrapper">
+    <div id="handle">≡</div>
+</div>
+
+<canvas id="diagramCanvas" class="canvas" width="300" height="100">
+    Device not supported, use firefox or chrome or safari or ie 10+
+</canvas>
+<canvas id="participantCanvas" class="canvas" width="500" height="100"></canvas>
+<div id="interactionCanvasWrapper">
+    <canvas id="interactionCanvas" class="canvas" width="300" height="100">
+        Device not supported, use firefox or chrome or safari or ie 10+
+    </canvas>
+</div>
+
+<!--
+<div id="copyrightNotice">
+    Current Version: 8.3.0 <a href="releasenotes.txt" title="release notes">release notes</a><br>
+    Legacy: <a href="legacy761/index.html">7.6.1</a>, <a href="legacy651/index.html">6.5.1</a>, <a href="legacy502/index.html">5.0.2</a>, <a
+        href="legacy471/index.html">4.7.1</a><br>
+    © SequenceDiagram.org
+</div>
+-->
+
+<div id="entryEditor">
+    <div id="entryEditorTop">&nbsp;<span id="entryEditorCloseIcon" title="close">✕</span></div>
+    <textarea id="entryEditorTextArea"></textarea>
+    <div><span class="popupDialogButtons">
+        <button id="entryEditorCancel">Cancel</button>
+        <button id="entryEditorUpdate">Update (Ctrl + Enter)</button>
+    </span></div>
+</div>
+
+<div id="cover"></div>
+
+<div id="openSourceMenu" class="openSaveMenu">
+    <span class="openSaveLabel">Google Drive</span><br>
+    <button id="openButtonGoogleDrive">Open</button>
+    <br>
+    <br>
+    <span class="openSaveLabel">OneDrive</span><br>
+    <button id="openButtonOneDrive">Open</button>
+    <br>
+    <br>
+    <span class="openSaveLabel">Web Storage (localStorage)</span><br>
+    <button id="openButtonWebStorage">Open</button>
+    <br><br>
+    <span class="openSaveLabel">Local Disk</span><br>
+    <form>
+        <input id="openButtonLocalDisk" type="file">
+    </form>
+</div>
+
+<div id="saveSourceMenu" class="openSaveMenu">
+    <span class="openSaveLabel">File Name</span><br>
+    <label for="fileName"></label><input id="fileName" type="text" size="40"><span class="smallText">.txt</span>
+    <br>
+    <br>
+    <span class="openSaveLabel">Google Drive</span><br>
+    <button id="saveButtonGoogleDrive">Save</button>
+    &nbsp;&nbsp;
+    <button id="saveInRootButtonGoogleDrive">Save in Root Folder</button>
+    <br>
+    <br>
+    <span class="openSaveLabel">OneDrive</span><br>
+    <button id="saveButtonOneDrive">Save</button>
+    <br>
+    <br>
+    <span class="openSaveLabel">Web Storage (localStorage)</span><br>
+    <button id="saveButtonWebStorage">Save</button>
+    <br>
+    <br>
+    <span class="openSaveLabel">Local Disk (Download Folder)</span><br>
+    <button id="saveButtonLocalDisk">Save</button>
+</div>
+
+<div class="popupDialog" id="imageSavePopup">
+    <div class="popupHead"><span class="popupTitle">Export Diagram</span><span class="popupCloseIcon" title="close">✕</span>
+    </div>
+    <div class="popupDialogInner">
+        <p>Right click and copy image or Save as...</p>
+        <p>&nbsp;</p>
+        <div id="imageDiv">
+        </div>
+    </div>
+</div>
+
+<div class="popupDialog" id="infoPopup">
+    <div class="popupHead"><span class="popupTitle">About</span><span class="popupCloseIcon" title="close">✕</span></div>
+    <div class="popupDialogInner">
+        <p class="infoText">SequenceDiagram.org is an online tool / software for creating uml sequence diagrams.
+        <p>All processing of parsing and painting the diagram is done client side in the user's web browser. This not only makes it snappy to
+            work with, but it also means that your data isn't transferred over the Internet by the tool like in many other sequence diagram tools. Since no
+            backend server is used it is also possible to use the tool offline.</p>
+
+        <p>There are many sequence diagram tools out there but this is the only one which allows you to:</p>
+        <ul>
+            <li>Script using a simple text notation when it is most convenient to do so, and</li>
+            <li>Draw the sequence diagram using your mouse at the same time when that is most convenient</li>
+        </ul>
+
+        <p>In other words bringing the best from both worlds. This makes it very easy to work with large diagrams where other similar tools struggle. It also
+            doesn't have any ads or unnecessary distracting elements.</p>
+
+        <p>The tool is developed, maintained, and used by people who create a lot of sequence diagrams in their daily work and from efficiency point of view
+            weren't 100% satisfied with the existing tools.</p>
+
+        <p>If you have any question/comments/suggestions/bugs please contact <a href="mailto:info@sequencediagram.org">info@sequencediagram.org</a>. The more
+            feedback we get the better we can prioritize.<br><br>
+
+        <h1 class="infoHeadline">FAQ</h1>
+        <h2 class="infoFAQ">Privacy and data protection information</h2>
+        <p class="infoText">The tool itself does not collect data, however services it relies on such as Content Delivery Network, hosting, and cloud storage
+            does. See <a href="privacypolicy.txt">privacy policy</a> for details.</p><br>
+
+        <h2 class="infoFAQ">Are diagrams/scripts created using SequenceDiagram.org subject to any license?</h2>
+        <p class="infoText">No license is imposed by SequenceDiagram.org on the generated output.
+            However, like with all images containing text, the fonts used might. The default font used in diagrams is the default sans-serif font selected by
+            your browser. You can specify a different font using the fontfamily keyword, see help for more information.
+            See <a href="LICENSE.txt">LICENSE</a> for details.</p><br>
+
+        <h2 class="infoFAQ">How do I generate a PDF of my sequence diagram?</h2>
+        <p class="infoText">Zoom to a chosen level in the editor and Print to PDF from your browser. The print css makes sure to only shows the diagram on the
+            page.</p><br>
+
+        <h2 class="infoFAQ">Are there any example sequence diagrams?</h2>
+        <p class="infoText">Yes, clicking the instruction button show examples of all possible diagram elements. Clicking on the displayed examples
+            appends them to the active sequence diagram.</p><br>
+
+        <h2 class="infoFAQ">Is the codebase of SequenceDiagram.org open source?</h2>
+        <p class="infoText">The codebase is currently not available under any open source license</p><br>
+
+        <h2 class="infoFAQ">Can I run the SequenceDiagram.org tool in my company's private network (on-premises)?</h2>
+        <p class="infoText">Yes, by donating 400$ you are licensed to run the SequenceDiagram.org tool and its REST-like API inside your company's network
+            (enterprise license). You are also eligible to receive any new published versions of the software for the duration of 1 year from the donation date
+            by request. Your donation is highly appreciated and allows us to keep SequenceDiagram.org online and free for everyone to use.
+            Please contact <a href="mailto:info@sequencediagram.org">info@sequencediagram.org</a> for any questions.<br><br>
+            The software is delivered in three formats:</p>
+        <ul>
+            <li>A Node JS application with the Sequencediagram.org tool and a REST-like API for integration with other services, see <a href="README.txt">README.txt</a>
+                for details
+            </li>
+            <li>A war file with the Sequencediagram.org tool for deployment in a Java Servlet Container such as Tomcat, Jboss, Wildfly, Jetty, etc</li>
+            <li>A zip file with the Sequencediagram.org tool for static web page hosting inside the DocumentRoot of a web server such as Apache, IIS, etc,
+                or static on any cloud provider
+            </li>
+        </ul>
+        <br>
+
+        <h2 class="infoFAQ">What libraries are used by SequenceDiagram.org?</h2>
+        <p class="infoText">
+        <ul>
+            <li><a href="https://github.com/pieroxy/lz-string">lz-string</a> is used to create URLs for sharing sequence diagrams.
+                <a href="libs/lz-string-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://github.com/gliffy/canvas2svg">Canvas2Svg</a> is used to export the diagram into SVG file format.
+                <a href="libs/canvas2svg-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://codemirror.net/">CodeMirror</a> is used as the text editor.
+                <a href="libs/codemirror-LICENSE.txt">LICENSE</a></li>
+            <li><a href="http://fontawesome.io">Font Awesome</a> is used to provide icons for the icon participants.
+                <a href="libs/fontawesome-webfont-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://materialdesignicons.com">Material Design Icons from the Community</a> is used to provide icons for the icon participants.
+                <a href="libs/materialdesignicons-webfont-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://github.com/google/material-design-icons">Material Design icons by Google</a> (included in materialdesignicons.com collection)
+                is used to provide icons for the icon participants.
+                <a href="libs/materialdesigniconsbygoogle-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://github.com/mourner/rbush">RBush</a> is used for collision detection calculations for onmousemove events.
+                <a href="libs/rbush-LICENSE.txt">LICENSE</a></li>
+            <li><a href="https://github.com/AzureAD/microsoft-authentication-library-for-js">MSAL.js</a> from Microsoft is used for authentication towards
+                Microsoft services.
+            </li>
+            <li><a href="https://docs.microsoft.com/en-us/onedrive/developer/controls/file-pickers/js-v72/?view=odsp-graph-online">OneDrive.js</a> from
+                Microsoft is used for file picker for OneDrive and SharePoint.
+            </li>
+            <li><a href="https://developers.google.com/identity/sign-in/web/sign-in">platform.js</a> from
+                Google is used for authentication towards Google services and file picker for Google Drive and Team Drives.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="popupDialog" id="shareUrlPopup">
+    <div class="popupHead"><span class="popupTitle">Share Link</span><span class="popupCloseIcon" title="close">✕</span></div>
+    <div class="popupDialogInner">
+        <p>Copy the above Titled link or Raw link and share it</p>
+        <p>&nbsp;</p>
+        <table>
+            <tr>
+                <td>Titled link:&nbsp;&nbsp;</td>
+                <td><a id="titledLinkCompressed" href="#" target="_blank" rel="noopener">sequence diagram link</a></td>
+            </tr>
+            <tr>
+                <td>Raw link:&nbsp;&nbsp;</td>
+                <td><textarea id="rawLinkCompressed" class="rawLink"></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;<br>&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Presentation Mode Titled Link:&nbsp;&nbsp;</td>
+                <td><a id="titledLinkPresentationModeReadOnlyCompressed" href="#" target="_blank" rel="noopener">sequence diagram link</a></td>
+            </tr>
+            <tr>
+                <td>Presentation Mode Raw Link:&nbsp;&nbsp;</td>
+                <td><textarea id="rawLinkPresentationModeReadOnlyCompressed" class="rawLink"></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;<br>&nbsp;</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>URI encoded Titled link:&nbsp;&nbsp;</td>
+                <td><a id="titledLinkUriEncoded" href="#" target="_blank" rel="noopener">sequence diagram link</a></td>
+            </tr>
+            <tr>
+                <td>URI encoded Raw link:&nbsp;&nbsp;</td>
+                <td><textarea id="rawLinkUriEncoded" class="rawLink"></textarea></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="popupDialog" id="webStoragePopup">
+    <div class="popupHead"><span class="popupTitle">Web Storage (localStorage)</span><span class="popupCloseIcon" title="close">✕</span></div>
+    <div class="popupDialogInner">
+        <table id="webStorageDiagramTable">
+            <thead>
+            <tr>
+                <th id="toggleWebStorageSelection">☐</th>
+                <th>Name</th>
+                <th>Modified</th>
+                <th>Size</th>
+            </tr>
+            </thead>
+            <tbody id="webStorageDiagramTableTBody">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="popupDialogBottom"><span class="popupDialogButtons">
+        <button id="webStoragePopupCancel">Cancel</button>
+        <button id="webStorageDelete">Delete</button>
+        <button id="webStorageOpen">Open</button>
+    </span></div>
+</div>
+
+<div class="popupDialog" id="instructionsPopup">
+    <div class="popupHead">
+        <span class="popupTitle">Instructions</span><span class="popupCloseIcon" title="close">✕</span>
+    </div>
+    <div class="popupDialogInnerIFrame">
+        <iframe id="instructionsIFrame" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script src="libs/initMain.js"></script>
+</body>
+</html>

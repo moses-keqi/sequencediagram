@@ -1,0 +1,1278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>示例</title>
+    <meta name="description" content="Sequence diagram examples and instruction.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=8.3.0">
+
+    <script src="libs/lz-string.min.js"></script>
+</head>
+<body class="popupDialogIFrameBody">
+<div>
+    <div class="instruction">
+        <p>Below follows a examples of all different sequence diagram UML elements supported by the editor.</p>
+        <p>Click the example sequence diagram images to append them to the diagram, hover to see the example script.</p>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Buttons</h2>
+        <p><img alt="instructions" class="negtopmargin" src="assets/instructions.svg" height="50">Show these instructions.</p>
+        <p><img alt="new" class="negtopmargin" src="assets/new.svg" height="50">Start working on a new diagram (same as opening a
+            new tab in your browser, or changing the File Name in the save menu)</p>
+        <p><img alt="participant" class="negtopmargin" src="assets/participant01.svg" height="50">Adds a new participant into the
+            diagram of type participant.</p>
+        <p><img alt="export" class="negtopmargin" src="assets/export01.svg" height="50">Shows the diagram as an image which can be
+            right clicked and copied. The size of the image depends on the current zoom level.</p>
+        <p><img alt="url" class="negtopmargin" src="assets/url.svg" height="50">Creates a link for sharing containing all the data
+            of the diagram.</p>
+        <p><img alt="open" class="negtopmargin" src="assets/open.svg" height="50">Open a source script text file directly from your
+            hard drive or from the browsers local storage.</p>
+        <p><img alt="save" class="negtopmargin" src="assets/save.svg" height="50">Save the source script as a text file directly to
+            your hard drive or in the browsers local storage.</p>
+        <p><img alt="pnghq" class="negtopmargin" src="assets/pnghq.svg" height="50">Save the diagram as a HQ png image. The size of
+            the image depends on the current zoom level.</p>
+        <p><img alt="jpglq" class="negtopmargin" src="assets/jpglq.svg" height="50">Save the diagram as a LQ jpg image. The size of
+            the image depends on the current zoom level.</p>
+        <p><img alt="svg" class="negtopmargin" src="assets/svg.svg" height="50">Save the diagram as a vector based svg image.</p>
+        <p><img alt="info" class="negtopmargin" src="assets/info.svg" height="50">About SequenceDiagram.org</p>
+    </div>
+
+    <div class="instruction">
+        <h2 class="instructionHeading">Keyboard Shortcuts</h2>
+        <table>
+            <tr>
+                <td>Ctrl-S / Cmd-S</td>
+                <td>- Save source</td>
+            </tr>
+            <tr>
+                <td>Ctrl-M / Cmd-M</td>
+                <td>- Presentation mode</td>
+            </tr>
+            <tr>
+                <td>Ctrl-Space / Cmd-Space</td>
+                <td>- Autocomplete in source</td>
+            </tr>
+            <tr>
+                <td>Ctrl-F / Cmd-F</td>
+                <td>- Find in source</td>
+            </tr>
+            <tr>
+                <td>Shift-Ctrl-F / Cmd-Option-F</td>
+                <td>- Replace in source</td>
+            </tr>
+            <tr>
+                <td>Shift-Ctrl-R / Shift-Cmd-Option-F</td>
+                <td>- Replace all in source</td>
+            </tr>
+            <tr>
+                <td>Alt-G</td>
+                <td>- Go to line in source</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="instruction">
+        <h2 class="instructionHeading">Title</h2>
+        <ul>
+            <li>The title is displayed at the top of the diagram</li>
+            <li>The title is also used as the file name when the<img alt="save" class="negtopmargin" src="assets/save.svg" height="50">icons
+                are clicked
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/title.png" alt="sequence diagram title example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">title Title
+                    A->B:info
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instruction">
+        <h2 class="instructionHeading">Participants</h2>
+        <ul>
+            <li>New particpants of type participant may be added by clicking the <img alt="participant" class="negtopmargin" src="assets/participant01.svg"
+                                                                                      height="50"> icon
+            </li>
+            <li>The following special participant types exist
+                <ul>
+                    <li>actor - specific icon</li>
+                    <li>boundary - specific icon</li>
+                    <li>control - specific icon</li>
+                    <li>database - specific icon</li>
+                    <li>entity - specific icon</li>
+                    <li>fontawesome - different icons from Font Awesome specified via the unicode code points found here: <a
+                            href="http://fontawesome.io/icons/" target="_blank" rel="noopener">fontawesome.io/icons</a><br>Note: The font is not embedded in exported SVG
+                        documents, hence, the font must be installed on the device viewing the SVG document
+                    </li>
+                    <li>materialdesignicons - different icons from Material Design Icons specified via the unicode code points found here: <a
+                            href="https://materialdesignicons.com/cheatsheet" target="_blank" rel="noopener">materialdesignicons.com/cheatsheet</a><br>Note: The font is
+                        not embedded in exported SVG documents, hence, the font must be installed on the device viewing the SVG document
+                    </li>
+                </ul>
+            </li>
+            <li>You may also use <a href="https://glyphsearch.com/?copy=unicode-hexadecimal" target="_blank" rel="noopener">glyphsearch.com</a> to get the unicode code
+                points for fontawesome and materialdesignicons
+            </li>
+            <li>Change the alias of a participant by double clicking it</li>
+            <li>A long displayed name can be written on form:
+                <ul>
+                    <li>participant "some very\nlong name" as Alice</li>
+                </ul>
+            </li>
+            <li>Delete a participant by clicking it and using the delete key</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/participant.png"
+                                            alt="sequence diagram participant example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant Participant</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/actor.png"
+                                            alt="sequence diagram actor example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">actor Actor</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/boundary.png"
+                                            alt="sequence diagram boundary example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">boundary Boundary</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/control.png"
+                                            alt="sequence diagram control example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">control Control</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/database.png"
+                                            alt="sequence diagram database example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">database Database</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/entity.png"
+                                            alt="sequence diagram entity example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">entity Entity</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/actorMultiline.png"
+                                            alt="sequence diagram actor with multi line example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">actor &quot;**++Big and\\nbold name&quot; as actorMultiline #red</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/participantMultiline.png"
+                                            alt="sequence diagram participant with multi line example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant &quot;some long\\nname with **//styling//**&quot; as participantMultiline</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/fontawesome.png"
+                                            alt="sequence diagram fontawesome icon example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">fontawesome f099 Twitter #1da1f2</div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/materialdesignicons.png"
+                                            alt="sequence diagram materialdesignicons icon example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">materialdesignicons F1FF escalator</div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Messages</h2>
+        <ul>
+            <li>Messages are created by clicking and dragging in the diagram
+                <ul>
+                    <li>Hold Shift before clicking for dashed line</li>
+                    <li>Hold Ctrl before clicking for open arrow</li>
+                    <li>Hold Shift+Ctrl before clicking for open arrow with dashed line</li>
+                </ul>
+            </li>
+            <li>Edit the text of a message by double clicking it</li>
+            <li>Change the start and end participants of the message by clicking and dragging the start or end of the message</li>
+            <li>Change position of the message by clicking and dragging the middle of the message</li>
+            <li>Delete the message by clicking it and pressing the delete key</li>
+            <li>New line is create using \n</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/syncreqresp.png"
+                                            alt="sequence diagram request response example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->B:request
+                    A<--B:response
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/asyncreqresp.png"
+                                            alt="sequence diagram async request response example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->>B:request
+                    A<<--B:response
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/selfmessage.png"
+                                            alt="sequence diagram self referencing message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->A:self message</div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Non-instantaneous Messages</h2>
+        <ul>
+            <li>Non-instantaneous messages are created by adding ([delay]) before the target participant, examples:
+                <ul>
+                    <li>A->(1)B: info</li>
+                    <li>A-->(5)B: info</li>
+                    <li>A->>(2)B: info</li>
+                </ul>
+            </li>
+            <li>Otherwise non-instantaneous messages behaves just like normal messages</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/noninstantaneousmessage.png"
+                                            alt="sequence diagram non-instantaneous message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    participant C
+                    A->(1)B:info
+                    A(1)<--B:info
+                    A(1)<-C:info
+                    B->(5)C:info\ninfo
+                    activate B
+                    activate C
+                    B(1)<--C:info
+                    deactivate C
+                    deactivate B
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/spacenoninstantaneousmessage.png"
+                                            alt="sequence diagram non-instantaneous messages arriving after later message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">Client->(5)Server:first sent message
+                    space -6
+                    Client->Server:later message
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Incoming and Outgoing Messages</h2>
+        <ul>
+            <li>Incoming and Outgoing Messages are created by using the special participants [ and ], examples:
+                <ul>
+                    <li>[->A: info</li>
+                    <li>A->]: info</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/inAndOutMessages.png"
+                                            alt="sequence diagram incoming and outgoing messages example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">[->A:info
+                    B->]:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Failure Messages</h2>
+        <ul>
+            <li>Failure Messages are created by using x to denot the arrow head, examples:
+                <ul>
+                    <li>A-xB: info</li>
+                    <li>A--#redx(1)C: info</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/failureMessage.png"
+                                            alt="sequence diagram failure message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A-#redxB:failure 1
+                    C-xB:failure 2
+                    Bx-B:failure 3
+                    C(5)x--A:failure 4
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Notes and Boxes</h2>
+        <ul>
+            <li>Notes and boxes are created by right clicking in the diagram and selecting the wanted note / box entry from the menu</li>
+            <li>Edit the text of a note or box by double clicking it</li>
+            <li>Change the start and end participants of the "note or box over several participants" by clicking and dragging the start or end of the note
+                or box
+            </li>
+            <li>Change position of the note or box by clicking and dragging the middle of the note or box
+                <ul>
+                    <li>
+                        Note: It is the bottom of the shapes that counts as the y position when dragging
+                    </li>
+                </ul>
+            </li>
+            <li>Delete the note or box by clicking it and pressing the delete key</li>
+            <li>New line is create using \n</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/noteover.png"
+                                            alt="sequence diagram notes over example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note over A:note over one\nmultiple lines\nof text
+                    note over A,B:note over several
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/notesides.png"
+                                            alt="sequence diagram notes on sides example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note left of A:note left of
+                    note right of A:note right of
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/boxover.png"
+                                            alt="sequence diagram box over example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">box over A:box over one
+                    box over A,B:box over several
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/boxsides.png"
+                                            alt="sequence diagram boxes on sides example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">box left of A:box left of
+                    box right of A:box right of
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/aboxover.png"
+                                            alt="sequence diagram angular box over example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">abox over A:abox over one
+                    abox over A,B:abox over several
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/aboxsides.png"
+                                            alt="sequence diagram angular box on sides example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">abox left of A:abox left of
+                    abox right of A:abox right of
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/rboxover.png"
+                                            alt="sequence diagram round box over example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">rbox over A:rbox over one
+                    rbox over A,B:rbox over several
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/rboxsides.png"
+                                            alt="sequence diagram round box on sides example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">rbox left of A:rbox left of
+                    rbox right of A:rbox right of
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instructionsImage"><img src="instructionimages/aboxleftright.png"
+                                        alt="sequence diagram angular box left and right example"/>
+        <div class="instructionImageCaption">
+            <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+            <div class="instructionImageText">aboxright over A,B:This is angular boxright
+                aboxleft over A,B:This is angular boxleft
+
+                aboxright over A:This is angular boxright
+                aboxleft over B:This is angular boxleft
+
+                aboxright right of A:This is angular boxright
+                aboxright left of B:This is angular boxright
+
+                aboxleft right of A:This is angular boxright
+                aboxleft left of B:This is angular boxleft
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="instruction">
+        <h2 class="instructionHeading">References</h2>
+        <ul>
+            <li>References are created by right clicking in the diagram selecting over which participants the reference should be from the menu</li>
+            <li>Edit the text of a reference by double clicking it</li>
+            <li>Change the start and end participants of the reference by clicking and dragging the start or end of the reference
+            </li>
+            <li>Change position of the reference by clicking and dragging the middle of the note or box
+                <ul>
+                    <li>
+                        Note: It is the bottom of the shapes that counts as the y position when dragging
+                    </li>
+                </ul>
+            </li>
+            <li>Delete the reference by clicking it and pressing the delete key</li>
+            <li>New line is create using \n</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/references.png"
+                                            alt="sequence diagram notes over example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->B:info
+                    ref over B,C:other interaction
+                    C->D:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Dividers</h2>
+        <ul>
+            <li>Dividers are created by right clicking in the diagram and selecting the divider entry from the menu</li>
+            <li>Edit the text of a divider by double clicking it</li>
+            <li>Change position of the divider by clicking and dragging it</li>
+            <li>Delete the divider by clicking it and pressing the delete key</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/divider.png"
+                                            alt="sequence diagram divider example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    participant C
+                    participant D
+                    ==info==
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Create and Destroy</h2>
+        <ul>
+            <li>Create and destroy are at this point not part of the context menu, participants may be defined in the start of the diagram
+                <ul>
+                    <li>participantNameA->*participantNameB: message: Sends a message to participantNameB and creates participantNameB</li>
+                    <li>create participantName: Creates the participant without sending a message to it</li>
+                    <li>destroy participantName: Destroys the participant at the previous entry's y position</li>
+                    <li>destroyafter participantName: Destroys the participant at after a space and gives the destroy symbol its own space</li>
+                    <li>destroysilent participantName: Destroys the participant at the previous entry's y position without rendering the destroy symbol</li>
+                </ul>
+            </li>
+            <li>Click and drag on the entries to move them in y axis using the mouse</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/createMessageDestroy.png"
+                                            alt="sequence diagram create message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    actor X
+                    participant B
+
+                    A->B:info
+                    B-->*C:&lt;&lt;create&gt;&gt;
+                    note over C:do something
+                    B<-C:info
+                    destroy C
+                    B->*X:message to X
+                    note over X:do something
+                    destroyafter X
+                    A->B:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/createAndDestroy.png"
+                                            alt="sequence diagram create without message example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->B:info
+                    create C
+                    note over C: C created without message
+                    A<-C:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/destroySilent.png"
+                                            alt="sequence diagram destroy silent example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->>B:request
+                    A<<--B:response
+                    destroysilent B
+                    destroysilent A
+                    C->D: info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Activations</h2>
+        <ul>
+            <li>Activations are created by right clicking in the diagram and selecting the activation entry from the menu
+                <ul>
+                    <li>activate participantName: Activates the participant at the previous entry's y position</li>
+                    <li>deactivate participantName: Deactivates the participant at the previous entry's y position. If no entry has been added since the
+                        activation the activity is deactivated directly, use deactivateafter or space if you want an empty gap
+                    </li>
+                    <li>deactivateafter participantName: Deactivates the participant right below the previous entry's y position</li>
+                </ul>
+            </li>
+            <li>Activations cannot be selected, moved, or edited using the mouse</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/activationcallback.png"
+                                            alt="sequence diagram activation example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    participant C
+                    participant D
+                    A->B:info
+                    activate B
+                    B->C:info
+                    activate C
+                    C->>D:info
+                    activate D
+                    B<--C:info
+                    deactivate C
+                    A<--B:info
+                    deactivate B
+                    B<-D:callback
+                    deactivate D
+                    activate B
+                    A<<--B:info
+                    deactivate B
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/activationselfref.png"
+                                            alt="sequence diagram activation with self reference example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant B
+                    participant D
+                    activate D
+                    B->D:info
+                    activate B
+                    deactivateafter B
+                    D->D:info
+                    activate D
+                    space
+                    deactivate D
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Auto Activation</h2>
+        <ul>
+            <li>Auto Activation automatically create activations on request messages and deactives on response messages, usual activations and deactivations can be used in combination with automatic activation
+                <ul>
+                    <li>autoactivation on: Activates automatic activations</li>
+                    <li>autoactivation off: Deactivates automatic activations</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/autoactivation.png"
+                                            alt="sequence diagram automatic activation example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">autoactivation on
+                    A->B:info
+                    B->C:info
+                    B<-C:info
+                    B-->C:info
+                    B->B:info
+                    deactivateafter B
+                    B<--C:info
+                    A<--B:info
+                    autoactivation off
+                    A->B:info
+                    A<--B:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Spaces</h2>
+        <ul>
+            <li>Spaces are created by right clicking in the diagram and selecting the space entry from the menu, examples:
+                <ul>
+                    <li>space</li>
+                    <li>space 3</li>
+                    <li>space -4 (may be used in together with non-instantaneous messages to visualize messages being sent out earlier arriving after later
+                        messages)
+                    </li>
+                </ul>
+            </li>
+            <li>Change position of the space by clicking and dragging it</li>
+            <li>Delete the space by clicking it and pressing the delete key</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/space.png"
+                                            alt="sequence diagram space example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant B
+                    participant D
+                    activate D
+                    B->D:info
+                    activate B
+                    space 3
+                    deactivate B
+                    D->D:info
+                    activate D
+                    space
+                    deactivate D
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Fragments</h2>
+        <ul>
+            <li>Fragments are created by right clicking in the diagram and selecting the wanted fragment type from the menu
+                <ul>
+                    <li>Since many possible fragments exists, only the most common are included in the menu, complete list: alt, opt, loop, par, break,
+                        critical, ref, seq, strict, neg, ignore, consider, assert, region
+                    </li>
+                </ul>
+            </li>
+            <li>Special fragments
+                <ul>
+                    <li>group allows a custom label for the fragment</li>
+                    <li>expandable allows a portion of the diagram to be expanded (expandable-) and collapsed (expandable+), click
+                        the label to toggle the expandable
+                    </li>
+                </ul>
+            </li>
+            <li>Edit the text of a fragment by double clicking the top of the fragment or its else part</li>
+            <li>Change inclusion of entries by clicking and dragging top, bottom, or else part of the fragment</li>
+            <li>You can also create new items directly inside the fragment</li>
+            <li>Delete the whole fragment (but keep the contents) by clicking the top or bottom of the fragment and pressing the delete key</li>
+            <li>Delete only the else (else is only supported inside the alt fragment) part by clicking the else divider and pressing delete key</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/opt.png"
+                                            alt="sequence diagram opt fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">opt optional
+                    note over A:info
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/alt.png"
+                                            alt="sequence diagram alt fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">alt case 1
+                    A->B:info
+                    else case 2
+                    A->B:info
+                    else case 3
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/loop.png"
+                                            alt="sequence diagram loop fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">loop i < 1000
+                    note over A:info
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/parThread.png"
+                                            alt="sequence diagram parallel thread fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">par info
+                    A->B:info1
+                    thread test
+                    A->B:info2
+                    thread test
+                    A->B:info2
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/par.png"
+                                            alt="sequence diagram parallel fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">par info
+                    A->C:info
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/group.png"
+                                            alt="sequence diagram group fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">group own name
+                    A->B:info
+                    end
+                    group own name [some text]
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/expandable.png"
+                                            alt="sequence diagram expandable fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->B:info1
+                    expandable- info 1234567890
+                    B->C:info2
+                    C->D:info3
+                    D->E:info4
+                    end
+                    E->F:info5
+                    expandable+ info qwertyurtyuiortyuioasdfghjkwertyuio
+                    B->C:info2
+                    C->D:info3
+                    D->E:info4
+                    end
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Participant Groups</h2>
+        <ul>
+            <li>Participant Groups are at this point not part of the context menu</li>
+            <li>Participant Groups draws a box to encompass a set of participants</li>
+            <li>Multiple nested levels are supported</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/participantgroup1.png"
+                                            alt="sequence diagram participant group example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participantgroup #lightgreen **Group 1**
+                    participant A
+                    participant B
+                    end
+                    participantgroup #lightblue **Long\nname**
+                    participant C
+                    end
+                    B->C:info
+                    note over A,B:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/participantgroup2.png"
+                                            alt="sequence diagram nested participant group example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participantgroup #lightgreen **Group 1**
+
+                    participantgroup #grey sub1
+                    participant A
+                    end
+
+                    participantgroup #pink sub2
+                    participant B
+                    end
+
+                    end
+
+                    participantgroup #lightblue **Long\nname**
+                    participant C
+                    end
+
+                    B->C:info
+                    note over A,B:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Links</h2>
+        <ul>
+            <li>Links can be added to all entries with text</li>
+            <li>Links can be clicked in the diagram (opens a new window) and are included when the diagram is exported as an SVG document</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/link.png"
+                                            alt="sequence diagram link example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A->B:This text contains a &lt;link:http://example.com>link&lt;/link&gt;
+                    note right of B:Here is &lt;link:https://www.w3schools.com&gt;another link&lt;/link&gt; </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/participantlink.png"
+                                            alt="sequence diagram participant link example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant &quot;Participant with a &lt;link:http://example.com>link&lt;/link&gt;&quot; as Alice
+                    Alice->Bob:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Frame</h2>
+        <ul>
+            <li>Frame draws a frame to encompass the entire diagram</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/frame.png"
+                                            alt="sequence diagram frame example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">frame Example Diagram
+                    A->B:info
+                    C->A: info
+                    note over B,C:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/frameColor.png"
+                                            alt="sequence diagram frame example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">frame #red Example Diagram
+                    A->B:info
+                    C->A: info
+                    note over B,C:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Text Styling</h2>
+        <ul>
+            <li>Text in all entries can be styled</li>
+            <li>Bold text: **some bold text**</li>
+            <li>Italic text: //some italic text//</li>
+            <li>Small text: --some small text--</li>
+            <li>Big text: ++some big text++</li>
+            <li>Monospaced text: ""some big text""</li>
+            <li>Big and bold: ++**some big and bold text**++</li>
+            <li>Italic and small: //--italic and small--//</li>
+            <li>Use \ to escape wanted */-+ chars, examples: c\+\+ http:\/\/www.example.org</li>
+            <li>Color: &lt;color:#red&gt;red text&lt;/color&gt;</li>
+            <li>Aligned text: &lt;align:center&gt;some centered text&lt;align&gt;</li>
+            <li>Sized text: &lt;size:20&gt;some very large text&lt;size&gt;</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/textstyle.png"
+                                            alt="sequence diagram text styling example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">box over A:**some bold text**
+                    box over A://some italic text//
+                    box over A:--some small text--
+                    box over A:++some big text++
+                    box over A:++**Big and bold\nlines of text**++\n//--italic and small--//
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/textStyleColor.png"
+                                            alt="sequence diagram text styling color example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant &quot;Al&lt;color:#red>ice&lt;/color&gt;//**Long** ++name++//&quot; as Alice
+                    box over Alice:Com&lt;color:#00ff00>binations:\n++**Big and bold green\nlines of text**++\n//--ital&lt;/color&gt;ic and small--//\n++Writing
+                    C\+\+ in big text using \ to escape +++
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/textStyleMonospaced.png"
+                                            alt="sequence diagram text styling example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note over A:&quot;&quot;This is mono spaced&quot;&quot; </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/textStyleSize.png"
+                                            alt="sequence diagram text styling example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note over Bob:&lt;size:20&gt;infoinfo&lt;/size&gt;&lt;size:10&gt;infoinfo&lt;/size&gt; </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/textStyleAlign.png"
+                                            alt="sequence diagram text styling example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note over Alice:&lt;align:left>infoinfoinfo\ninfo&lt;/align>
+                    note over Alice:&lt;align:center&gt;infoinfoinfo\ninfo&lt;/align&gt;
+                    note over Alice:&lt;align:right>infoinfoinfo\ninfo&lt;/align&gt; </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Colors</h2>
+        <ul>
+            <li>Color is supported for most of the entries and use the HTML color names or hex</li>
+            <li>W3C provides a good list of color names: <a target="_blank" href="https://www.w3schools.com/colors/colors_names.asp" rel="noopener">W3C color names</a></li>
+            <li>Examples: #ff00ff, #lightblue</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/colorparticpant.png"
+                                            alt="sequence diagram color participants example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A#red
+                    database B#green
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/colordivider.png"
+                                            alt="sequence diagram color divider example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    participant C
+                    participant D
+                    ==info==#lightgreen
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/colorboxnote.png"
+                                            alt="sequence diagram color boxes and notes example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">note over A#yellow:info
+                    rbox over A#violet:info
+                    abox right of A#steelblue:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/colormessage.png"
+                                            alt="sequence diagram color messages example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">A-#red>B:info
+                    A&lt;#green--B:info
+                    A--#blue>>B:info
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/coloractivation.png"
+                                            alt="sequence diagram color activations example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    activate A #00ee77
+                    A->B:info
+                    activate B #red
+                    B->B:info
+                    activate B #lightgray
+                    deactivateafter B
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/colorfragment.png"
+                                            alt="sequence diagram color fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">loop #ff00ff info 1234567890
+                    B->C:info2
+                    C->D:info3
+                    D->E:info4
+                    end
+                </div>
+            </div>
+        </div>
+        <div class="instructionsImage"><img src="instructionimages/fragmentLabelTextColor.png"
+                                            alt="sequence diagram label color fragment example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">group #2f2e7b label text #white [condition]
+                    A->B:info
+                    end
+                    loop #2f2e7b #white condition
+                    A->B:info
+                    end
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Active Color</h2>
+        <ul>
+            <li>Active color specifies the color of all activations of a participant, the specified value will be overridden by any color specified on
+                specific activations
+                <ul>
+                    <li>activecolor #red: make all activations red</li>
+                    <li>activecolor participantName #blue: make all activations of the participant blue</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/activeColor.png"
+                                            alt="sequence diagram active color example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant B
+                    participant C
+                    participant D
+
+                    activecolor #red
+                    activecolor C #blue
+
+                    activate B
+                    B->C:info
+                    activate C
+                    C->>D:info
+                    activate D
+                    B<--C:info
+                    deactivate C
+                    deactivate B
+                    B<-D:callback
+                    activate C
+                    deactivate D
+                    activate B
+
+                    B->D:info
+                    deactivate B
+                    B<-D:info
+                    activate B #green
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Fonts</h2>
+        <ul>
+            <li>The font can be specified using the fontfamily keyword and the css name of the font</li>
+            <li>Specific font: fontfamily My Font Name</li>
+            <li>Browser selected sans-serif font: fontfamily sans-serif</li>
+            <li>Browser selected mono spaced font: fontfamily mono</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/fontfamily.png"
+                                            alt="sequence diagram font example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">fontfamily mono
+                    participant A
+                    note over A:This is mono spaces
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Automatic Numbering</h2>
+        <ul>
+            <li>The autonumber statement gives automatic number of subsequent messages</li>
+            <li>The autonumber off statement stops the numbering</li>
+            <li>Automatic numbering can be started at a specified number, example: autonumber 10</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/autonumber.png"
+                                            alt="sequence diagram automatic number example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">autonumber 1
+                    A->B:info
+                    B->B:info
+                    autonumber 10
+                    C->D:info
+                    A<-B:info
+                    A->B:info
+                    autonumber off
+                    B->C:info
+                    C->D:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Linear Messages</h2>
+        <ul>
+            <li>The linear statement makes subsequent messages of the same type linear</li>
+            <li>The linear off statement stops linear</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/linear.png"
+                                            alt="sequence diagram linear messages example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">linear
+                    A->B:info
+                    B->C:info
+                    C->D:info
+                    C<--D:info
+                    B<--C:info
+                    A<--B:info
+                    A->>B:info
+                    B->>C:info
+                    linear off
+                    C->>D:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Parallel</h2>
+        <ul>
+            <li>The parallel statement simply puts subsequent entries at the same y position</li>
+            <li>The parallel off statement stops parallel</li>
+            <li>It is different from linear since it doesn't do any intelligent matching for different types of entries</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/parallel.png"
+                                            alt="sequence diagram parallel example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">parallel
+                    A<<-B:info
+                    B->C:info
+                    note left of D:info
+                    parallel off
+                    C->>D:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Participant Spacing</h2>
+        <ul>
+            <li>Participant spacing allows control of spacing between the participants</li>
+            <li>The participantspacing equal statement makes the spacing between all participants equal</li>
+            <li>The participantspacing 50 statement makes the spacing between all participants at least 50</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/participantspacing.png"
+                                            alt="sequence diagram participant spacing example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participantspacing equal
+                    participant A
+                    participant B
+                    participant C
+
+                    A->B:info info info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Entry Spacing</h2>
+        <ul>
+            <li>Entry spacing allows control of spacing between the entries</li>
+            <li>Click anywhere on the diagram and press the + or - key to change spacing between all entries</li>
+            <li>Add entryspacing statements to change in different places of the diagram</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/entryspacing.png"
+                                            alt="sequence diagram entry spacing example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">entryspacing 0.1
+                    A->B:info
+                    A->B:info
+                    entryspacing 3
+                    A->B:info
+                    entryspacing 1
+                    A->B:info
+                    A->B:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Life Line Color</h2>
+        <ul>
+            <li>Specifies the color of the life lines
+                <ul>
+                    <li>lifelinecolor #blue: make all life lines blue</li>
+                    <li>lifelinecolor participantName #red: make participant life line red</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/lifeLineColor.png"
+                                            alt="sequence diagram active color example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">participant A
+                    participant B
+                    participant C
+
+                    lifelinecolor #blue
+                    lifelinecolor B #red
+
+                    A->B:info
+                    B->C:info
+                    B<--C:info
+                    A<--B:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Life Line Weight</h2>
+        <ul>
+            <li>Specifies the weigth of the life lines
+                <ul>
+                    <li>lifelineweight 4: sets the life line weight to 4</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/lifeLineWeight.png"
+                                            alt="sequence diagram active color example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">lifelineweight 4
+
+                    A->B:info
+                    B->C:info
+                    B<--C:info
+                    A<--B:info
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="instruction">
+        <h2 class="instructionHeading">Large Example</h2>
+        <ul>
+            <li>Large example including most of the features</li>
+        </ul>
+        <div class="instructionsImage"><img src="instructionimages/largeexample.png" alt="sequence diagram example"/>
+            <div class="instructionImageCaption">
+                <div class="instructionImageCopyIcon" title="Copy">&#9112;</div>
+                <div class="instructionImageText">Source too large to display</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="libs/instructions.js"></script>
+</body>
+</html>

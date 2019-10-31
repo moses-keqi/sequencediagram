@@ -1,0 +1,657 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('libs/fontawesome-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MaterialDesignIcons';
+    src: url('libs/materialdesignicons-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a, a:visited {
+    color: #1a1a1a;
+}
+
+a img {
+    border: none;
+    outline: none;
+}
+
+#top {
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    height: 40px;
+    background-color: #f6f6f6;
+    border-bottom: solid 1px #aaaaaa;
+}
+
+#license {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    text-align: right;
+    font-style: italic;
+}
+
+#logo {
+    position: fixed;
+    padding: 8px;
+    top: 0;
+    left: 0;
+}
+
+#activeFile {
+    position: fixed;
+    top: 0;
+    left: 30px;
+    height: 14px;
+    margin: auto;
+    color: #505050;
+    padding: 13px;
+}
+
+#activeFileStatus {
+    color: #505050;
+    font-size: 0.9em;
+}
+
+#activeFileNameChange {
+    display: none;
+}
+
+#topRight {
+    z-index: 300;
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    text-align: right;
+}
+
+#notification {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    font-size: 0.9em;
+    color: #505050;
+    display: none;
+    background-color: #f6f6f6;
+    border: solid 1px #aaaaaa;
+    padding: 14px;
+    text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.dropdown:hover .menuContent {display: block;}
+
+.menuButton {
+    color: #505050;
+    font-size: 0.9em;
+    padding: 13px;
+    margin-right: 10px;
+    cursor: default;
+    display: inline-block;
+    height: 14px;
+}
+
+.menuContent {
+    position: fixed;
+    right: 0;
+    display: none;
+    z-index: 20;
+    font-size: 0.9em;
+    color: #505050;
+    padding: 7px 0;
+    background-color: #f6f6f6;
+    border-bottom: solid 1px #aaaaaa;
+    border-left: solid 1px #aaaaaa;
+    border-right: solid 1px #aaaaaa;
+    margin-right: -1px;
+}
+
+.menuRow {
+    padding: 7px 10px;
+    cursor: default;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.menuRowHighlight:hover {
+    background-color: #eeeeee;
+}
+
+.menuRow input {
+    vertical-align: middle;
+}
+
+.menuTable {
+    width: 200px;
+}
+
+.menuTable td.right {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.menuTable td div {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#paypalForm {
+    display: inline-block
+}
+
+#actions {
+    position: fixed;
+	/**position:relative;*/
+    top: 50px;
+    left: 0;
+    z-index: 5;
+}
+
+.actionButton {
+    display: block;
+    /**
+	width: 50px;
+    height: 50px;
+	*/
+	width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+#source {
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    z-index: 10;
+}
+
+#handleWrapper {
+    position: fixed;
+    left: 50px; /*codemirror gutter is 30px*/
+    top: 50px;
+    z-index: 9;
+}
+
+#handle {
+    position: relative;
+    background-color: #f6f6f6;
+    border: #aaa solid 1px;
+    cursor: se-resize;
+    text-align: center;
+    /*padding: 1px;*/
+}
+
+#diagramCanvas {
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    z-index: 0;
+}
+
+#participantCanvas {
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    z-index: 1;
+    opacity: 0.7;
+    display: none;
+}
+
+#interactionCanvasWrapper {
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    z-index: 2;
+    padding-right: 20em;
+    padding-bottom: 20em;
+}
+
+.contextMenuPart {
+    white-space: nowrap;
+    z-index: 100;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #a9a9a9;
+    font-family: sans-serif;
+    background: #FFF;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.contextMenuPart li {
+    white-space: nowrap;
+    padding: 5px 15px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.contextSubMenuPart li:hover {
+    background-color: #eeeeee;
+}
+
+.contextSubMenuPart {
+    display: none;
+}
+
+.openSaveMenu {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    overflow: hidden;
+    border-bottom: 1px solid #a9a9a9;
+    border-top: 1px solid #a9a9a9;
+    border-right: 1px solid #a9a9a9;
+    white-space: nowrap;
+    font-family: sans-serif;
+    background: #f6f6f6;
+    color: #333;
+    padding: 10px;
+    margin: 0;
+}
+
+.openSaveLabel {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #71bad7;
+}
+
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 300;
+    display: none;
+}
+
+#imageDiv {
+    padding: 20px;
+    text-align: center;
+}
+
+#copyrightNotice {
+    left: 10px;
+    position: fixed;
+    bottom: 10px;
+    z-index: 2;
+    font-size: 0.7em;
+}
+
+.popupDialogIFrameBody {
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#instructionsIFrame {
+    height: 100%;
+    width: 100%;
+}
+
+.popupDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #ffffff;
+    width: 1100px;
+    height: 920px;
+    margin-top: -460px;
+    margin-left: -550px;
+    z-index: 400;
+    display: none;
+    border: solid 1px #aaaaaa;
+}
+
+.popupDialogInner {
+    height: 820px;
+    margin: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.popupDialogInnerIFrame {
+    height: 820px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.popupHead {
+    padding: 20px 10px 10px 20px;
+}
+
+.popupTitle {
+    font-size: 1.4em;
+    font-weight: normal;
+}
+
+.popupCloseIcon {
+    font-size: 1.2em;
+    color: grey;
+    cursor: pointer;
+    float: right;
+    margin-top: -10px;
+}
+
+.popupCloseIcon:hover {
+    color: #505050;
+}
+
+.popupDialogButtons {
+    float: right;
+}
+
+.popupDialogButtons button {
+    margin: 5px 0 10px 10px;
+}
+
+.popupDialogBottom {
+    margin-right: 10px;
+}
+
+#shareUrlPopup table {
+    text-align: left
+}
+
+.smallText {
+    font-size: 0.9em
+}
+
+#webStoragePopup {
+    width: 1100px;
+    height: 600px;
+    margin-top: -300px;
+    margin-left: -550px;
+}
+
+#webStoragePopup .popupDialogInner {
+    height: 466px;
+}
+
+#webStorageDiagramTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#webStorageDiagramTable td, th {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    cursor: default;
+}
+
+#webStorageDiagramTable tbody tr:hover {
+    background: #eee;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.instruction {
+    margin-bottom: 50px;
+}
+
+.negtopmargin {
+    margin-top: -40px;
+    margin-bottom: -15px;
+}
+
+.instructionsImage {
+    border: dashed thin #333333;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.rawLink {
+    height: 200px;
+    width: 700px;
+}
+
+.infoFAQ {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.infoHeadline {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.instructionHeading {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.instructionImageCaption {
+    background-color: #eff0f1;
+    color: #505050;
+    padding: 15px 50px 15px 15px;
+    position: relative;
+    border: solid #cccccc 1px;
+    margin-top: 10px;
+}
+
+.instructionImageCopyIcon {
+    font-size: 1.1em;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+    border: solid #cccccc 1px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    visibility: hidden;
+    font-weight: bold;
+}
+
+.instructionImageCopyIcon:hover {
+    background-color: white;
+}
+
+.instructionImageCopyIcon:active {
+    background-color: #eff0f1;
+}
+
+.instructionImageCaption:hover .instructionImageCopyIcon {
+    visibility: visible;
+}
+
+.instructionImageText {
+    text-align: left;
+    font-family: monospace;
+    white-space: pre-line;
+}
+
+.toolTip {
+    font-size: 0.8em;
+    font-weight: normal;
+    display: block;
+    /*width: 70px;*/
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    /*border-radius: 5px;*/
+    padding: 2px 6px;
+    margin-bottom: 3px;
+
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -30px;
+    z-index: 800;
+}
+
+#entryEditor {
+    position: absolute;
+    z-index: 999;
+    display: none;
+    top: 300px;
+    left: 300px;
+    background-color: white;
+    border: solid 1px #aaaaaa;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+}
+
+#entryEditor textarea {
+    width: 500px;
+    height: 200px;
+}
+
+#entryEditorCloseIcon {
+    font-size: 1.2em;
+    color: grey;
+    cursor: pointer;
+    float: right;
+}
+
+#entryEditorTop {
+    cursor: grab;
+}
+
+#entryEditorTop:active {
+    cursor: grabbing;
+}
+
+#entryEditor span:hover {
+    color: #505050;
+}
+
+/* code mirror */
+.errors {
+    width: 0.8em;
+}
+
+.CodeMirror {
+    border: 1px solid #aaa;
+}
+
+.CodeMirror-error-scrollbar {
+    background: lightcoral;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    opacity: .5;
+}
+
+.gTXqXb {
+    backface-visibility: hidden;
+    background-color: rgb(249, 104, 84);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    opacity: unset;
+    position: relative;
+    pointer-events: unset;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+    white-space: nowrap;
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.809023rem !important;
+    border-radius: 0;
+    border: 2px solid rgb(249, 104, 84);
+    border-image: initial;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.fKGKmg {
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    visibility: visible;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.fSJOpK {
+    align-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.fysOvk {
+    align-self: center;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: unset;
+    filter: none;
+    display: inline-flex !important;
+}
+
+.jQSwUz {
+    width: 0.75rem;
+    height: 1px;
+}
+
+.jlyAAk {
+    display: flex;
+}
+
+.jlyAAk svg {
+    align-self: center;
+    height: 0.75rem;
+    width: 0.75rem;
+}
+
+.jlyAAk svg [data-color="1"] {
+    fill: rgb(255, 255, 255);
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.jlyAAk svg [data-color="2"] {
+    fill: rgb(5, 45, 73);
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
