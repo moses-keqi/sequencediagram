@@ -323,7 +323,8 @@ a img {
     background-color: #ffffff;
     width: 1100px;
     height: 920px;
-    margin-top: -460px;
+    /**margin-top: -460px;*/
+	margin-top: -22%;
     margin-left: -550px;
     z-index: 400;
     display: none;
